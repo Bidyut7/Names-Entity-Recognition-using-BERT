@@ -1,22 +1,10 @@
-#from transformers import AutoModelForTokenClassification, AutoTokenizer, pipeline
 
 import streamlit as st
-import spacy
-
-#import spacy
-
-#nlp = spacy.load("en_core_web_sm")
-
-#def extract_entities(text):
-    #doc = nlp(text)
-    #entities = [(ent.text, ent.label_) for ent in doc.ents]
-    #return entities
 
 from transformers import TFAutoModelForTokenClassification, AutoTokenizer, pipeline
 
 model_name = "dbmdz/bert-large-cased-finetuned-conll03-english"
 
-# Load TensorFlow-based model
 model = TFAutoModelForTokenClassification.from_pretrained(model_name)
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 
